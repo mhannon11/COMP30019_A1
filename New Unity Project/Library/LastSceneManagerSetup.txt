@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/FractalLandscape.unity
+- path: Assets/Scenes/FractalLandscape.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
