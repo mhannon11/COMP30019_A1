@@ -41,8 +41,6 @@
      <Compile Include="Assets\Scripts\PhongScript.cs" />
      <Compile Include="Assets\Scripts\PointLight.cs" />
      <Compile Include="Assets\Scripts\SunOrbit.cs" />
-     <Compile Include="Assets\Scripts\TerrainSplatmap.cs" />
-     <Compile Include="Assets\Scripts\WaterScript.cs" />
      <None Include="Assets\Shaders\TerrainShader.shader" />
      <None Include="Assets\Shaders\WaterShader.shader" />
     <Reference Include="UnityEngine">

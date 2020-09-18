@@ -10,9 +10,9 @@ The function first randomaly generates a height for each of the corners in the r
 
 During the diamond and square steps of each iteration a random value is added the average of the respective points. While implementing the algorithm it was learnt that this random value was one of the most important parts of creating realistic looking terrain, if the random value added to each average was too large then the generated terrain would be very jagged and not have a smooth transition between each point. So to get the best looking terrain the random values added needed to be scaled to each particular step, for example the random value generated for the first step would be in the range of the max height of the terrain, but a random value generated for the third step would be a in the range of a quarter of the max height of the terrain. A roughness constant is also factored in when generating the random values, for a mountainous terrain a higher constant is needed compared to a smoother terrain. The following equation is what was used:
 
-    random = ((Random value between 0 and 1) * (roughness * step size) * 2.5) - (roughness * step size)
+    random = ((Random value between 0 and 1) * (roughness * step size) * 2.0) - (roughness * step size)
     
-    Where roughness = 0.65
+    Where roughness = 0.4
 
 When intially implementing the algorithm there were problems with artifacts and areas on the generated heightmap which were outside of the range of the terrain height creating ugly flat ares at the highest points in the terrain. To counter this a function called 'generateValid' was created which generates the random value to be added to the averages during the diamond and square steps. This function only generates values to be added to the height map that would not exceed the height maximum when added the the averages. This got rid of the ugly flat areas of the terrain.
 
@@ -43,7 +43,7 @@ In this script is also were the default camera angle and positioning are set so 
 
 ----- Phong Illumination Model Paramaters -----
 
-For the terrain and the water seperate shaders and paramaters were used. The terrain used 'TerrainShader.shader' and the water used 'WaterShader.shader'.
+For the terrain and the water seperate shaders and paramaters were used. The terrain used 'TerrainShader.shader' and the water used 'WaterShader.shader'. The model implementation was based off of the workshop solutions.
 
 For the terrain, the parameters were set to represent the properties of a mountain range as closely as possible. To achieve this the specular component of the model was set to only have small amounts of reflection, as the rock, grass and sand of a mountain are not shiny, but still have slight highlights as they are not completely matte in texture. The diffuse component of the model was set to reflect the roughness of the terrain of the terrain, having significant amounts of diffuse reflection.
 
@@ -53,7 +53,7 @@ Ka = 0.3, Kd = 50, Ks = 1, n = 2
 For the water, the paramaters were set to represent the shiny properties of water. The specular component of the model was set high to represent the shinyness of water, this leads to tighter highlights on the water surface. The diffuse component of the water was set relatively low as most of the light specularly reflects of the surface of water.
 
 Water Paramaters:
-Ka = 0.3, Kd = 1, Ks = 1, n = 
+Ka = 0.3, Kd = 1, Ks = 1, n = 200
 
 
 ----- Vertex Shader Implementation -----
