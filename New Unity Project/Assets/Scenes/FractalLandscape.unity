@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de79caad3abd42d78894c20bdb5e40a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8000
+  speed: 4000
   sensitivity: 25
   defaultPosition: {x: 150, y: 850, z: 150}
   defaultAngle: {x: 65, y: 45, z: 0}
@@ -386,7 +386,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &1021107796
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,7 +627,7 @@ MonoBehaviour:
     startingHeight: 100
   - textureIndex: 3
     startingHeight: 160
-  roughness: 0.8
+  roughness: 0.6
 --- !u!154 &1594850505
 TerrainCollider:
   m_ObjectHideFlags: 0

@@ -42,8 +42,6 @@ public class GenerateLandscape : MonoBehaviour {
 
         //Start by setting all 4 corners with random values
         float[] corners = new float[4];
-        int low = 0;
-        int high = 0;
 
         heights[0, 0] = (float) Random.Range (0f, height);
         heights[0, resolution - 1] = (float) Random.Range (0f, height);
